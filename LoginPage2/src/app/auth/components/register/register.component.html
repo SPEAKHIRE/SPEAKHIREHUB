@@ -1,0 +1,1020 @@
+<div class="container tb-10">
+
+<form (ngSubmit) = "submit()" [formGroup]="multistep">
+
+ <mat-horizontal-stepper>
+    <mat-step label = "Confirm your eligibility" formGroupName="confirm">
+      <!-- form1 -->
+        <!-- <div *ngIf = "step == 1" formGroupName="confirm"> -->
+          <div>
+            <h1> Hello! Thank you for your interest in becoming a SPEAKHIRE Career Pathways Champion!  </h1>
+            <p>This application is for any individuals interested in volunteering as a SPEAKHIRE Champion to youth. Please answer all questions completely, providing details where needed. To register, you will need your LinkedIn, a brief bio, and your head shot. If you have this information, the application should take about 20 minutes to complete.</p>
+            <p>
+              <b>Confirm your eligibility</b>
+              <br>
+              Do you meet each of the below requirements? If you do not meet both of the below requirements, please do not continue the application. This question is required.*
+              <br>
+              - You have at least 2 years of professional experience in your career field and are satisfied with you career
+              <br>
+              - You are able to meet during business hours</p>
+              <!-- yes or no -->
+              <mat-radio-group formControlName="confirmEligible" aria-label="Select an option">
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <br>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>
+              <br>
+              <br>
+
+              <div>
+                <button mat-button matStepperNext type="button" class="btn btn-primary mx-2">Next</button>
+              </div>
+            </div>
+        <!-- </div>  -->
+    </mat-step>
+
+
+
+
+
+
+    <mat-step label = "Profile Information" formGroupName="profileInformation">
+        <!-- form2 -->
+          <!-- <div *ngIf = "step == 2" formGroupName="profileInformation"> -->
+          <div>
+            <div class="row">
+              <div class="col">
+                <h1> Profile Information</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label class="required-field" for="fnText">First Name</label>
+                  <input type="text" class="form-control" formControlName="fname" id="fnText" placeholder="Enter first name">
+                  <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label class="required-field" for="lnText">Last Name</label>
+                  <input type="text" class="form-control" formControlName="lname" id="lnText" placeholder="Enter last name">
+                  <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label class="required-field" for="fnText">Username</label>
+                  <input type="text" class="form-control" formControlName="uname" id="fnText" placeholder="Enter Username">
+                  <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label class="form-check-inline" for="inlineRadio2"  class="required-field"> Date of Birth</label>
+                    <input type="date" class="form-control" formControlName="dBirth"  name="expirymat-" id="mat-Input1" >
+                  </div>
+                  <small class="form-check-inline form-text custom-invalid-feedback">Pick one option.</small>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label class="required-field" for="fnText">Password</label>
+                  <input type="password" class="form-control" formControlName="passWord"  id="fnText" placeholder="Enter Password">
+                  <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label class="required-field" for="lnText">Reenter Password</label>
+                  <input type="password" class="form-control" formControlName="reenterPassWord"  id="lnText" placeholder="Enter Password">
+                  <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                </div>
+              </div>
+            </div>
+            <!-- sepemat-r -->
+            <div class="row">
+                <div class="col">
+                  <hr>
+                </div>
+              </div> 
+
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="required-field" for="fnText"> Email </label>
+                      <input type="text" class="form-control"  formControlName="email" id="fnText" placeholder="Enter Email">
+                      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="required-field" for="lnText"> Phone Number</label>
+                      <input type="text" class="form-control" formControlName="pNumber" id="lnText" placeholder="Enter Phone Number">
+                      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="required-field"  for="fnText"> Gender </label>
+                        <mat-select class="form-control" formControlName="gender" placeholder="Pick one option">
+                          <mat-option value="Female-identifying"> Female-identifying </mat-option>
+                          <mat-option value="Male-identifying"> Male-identifying </mat-option>
+                          <mat-option value="Non-Binary"> Non-Binary </mat-option>
+                          <mat-option value="Prefer not to say"> Prefer not to say </mat-option>
+                          <mat-option value="Other"> Other </mat-option>
+                        </mat-select>
+                        <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="required-field" for="fnText"> Citizenship </label>
+                        <mat-select class="form-control" formControlName="citizenship" placeholder="Pick one option">
+                          <mat-option value=".S. Citizen">U.S. Citizen</mat-option>
+                          <mat-option value="U.S. Permanent Resident">U.S. Permanent Resident</mat-option>
+                          <mat-option value="Non-Citizen">Non-Citizen</mat-option>
+                        </mat-select>
+                        <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="required-field" for="fnText"> Religion </label>
+                        <mat-select class="form-control" formControlName="religion" placeholder="Pick one option">
+                              <mat-option value="African Traditional &amp; Diasporic">African Traditional &amp; Diasporic</mat-option>
+                              <mat-option value="Agnostic">Agnostic</mat-option>
+                              <!-- <mat-option value=mat-eist"mat-eist</mat-option> -->
+                              <mat-option value="Baha'i">Baha'i</mat-option>
+                              <mat-option value="Buddhism">Buddhism</mat-option>
+                              <mat-option value="Cao Dai">Cao Dai</mat-option>
+                              <mat-option value="Chinese traditional religion">Chinese traditional religion</mat-option>
+                              <mat-option value="Christianity">Christianity</mat-option>
+                              <mat-option value="Hinduism">Hinduism</mat-option>
+                              <mat-option value="Islam">Islam</mat-option>
+                              <mat-option value="Jainism">Jainism</mat-option>
+                              <mat-option value="Juche">Juche</mat-option>
+                              <mat-option value="Judaism">Judaism</mat-option>
+                              <mat-option value="Neo-Paganism">Neo-Paganism</mat-option>
+                              <mat-option value="Nonreligious">Nonreligious</mat-option>
+                              <mat-option value="Rastafarianism">Rastafarianism</mat-option>
+                              <mat-option value="Secular">Secular</mat-option>
+                              <mat-option value="Shinto">Shinto</mat-option>
+                              <mat-option value="Sikhism">Sikhism</mat-option>
+                              <mat-option value="Spiritism">Spiritism</mat-option>
+                              <mat-option value="Tenrikyo">Tenrikyo</mat-option>
+                              <mat-option value="Unitarian-Universalism">Unitarian-Universalism</mat-option>
+                              <mat-option value="Zoroastrianism">Zoroastrianism</mat-option>
+                              <mat-option value="primal-indigenous">primal-indigenous</mat-option>
+                              <mat-option value="Perfer not to say">Perfer not to say</mat-option>
+                              <mat-option value="Non-Religion">Non-Religion</mat-option>
+                              <mat-option value="Other1">Other</mat-option>
+                        </mat-select>
+                        <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="lnText"> If religion is not mentioned </label>
+                      <input type="text" class="form-control" formControlName="ifnotreligion" id="lnText" placeholder="Enter religion">
+                      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is not required</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                      <hr>
+                    </div>
+                  </div> 
+
+            <div>
+              <button mat-button matStepperPrevious type="button" class="btn btn-primary mx-2">Back</button>
+              <button mat-button matStepperNext type="button" class="btn btn-primary mx-2">Next</button>
+            </div>
+        </div>
+    </mat-step>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <mat-step label = "Professional Information"  formGroupName="personalProfProfessional">
+       <!-- form2 -->
+        <div>
+          <div class="row">
+            <div class="col">
+              <h1> Personal and Professional Information</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label class="required-field" for="fnText">Mailing Address</label>
+                <input type="text" class="form-control" formControlName="mailingAddress" id="fnText" placeholder="Enter Mailing Address">
+                <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label class="required-field" for="lnText">Linkedln URL</label>
+                <input type="text" class="form-control" formControlName="linkedlnURL" id="lnText" placeholder="Enter Linkedln UR">
+                <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label class="required-field" for="fnText">City of Residence</label>
+                <mat-select class="form-control" formControlName="cityOfResident" placeholder="Pick one option">
+                  <mat-option value="Boston, MA"> Boston, MA </mat-option>
+                  <mat-option value="Bronx, NY"> Bronx, NY </mat-option>
+                  <mat-option value="Brooklyn, NY "> Brooklyn, NY </mat-option>
+                  <mat-option value="Houston, TX"> Houston, TX </mat-option>
+                  <mat-option value="Newark, NJ "> Newark, NJ </mat-option>
+                  <mat-option value="New York, NY"> New York, NY </mat-option>
+                  <mat-option value="Philadelphia, PA"> Philadelphia, PA </mat-option>
+                  <mat-option value="Queens, NY"> Queens, NY </mat-option>
+                  <mat-option value="San Antonio, TX"> San Antonio, TX </mat-option>
+                  <mat-option value="San Francisco, CA"> San Francisco, CA </mat-option>
+                  <mat-option value="Not one of above"> Not one of above </mat-option>
+                </mat-select>
+                <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+            </div>
+          
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label class="form-check-inline" for="inlineRadio2"  class="required-field"> Resume</label>
+                <!-- <form action="/action_page.php">
+                  <input type="file" id="myFile" formControlName="resume" name="filename">
+                </form> -->
+                </div>
+                <small class="form-check-inline form-text custom-invalid-feedback">Pick one option.</small>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label class="required-field" for="fnText">Highest Degree Achieved</label>
+                <input type="password" class="form-control" formControlName="highestDegreeAchieved" id="fnText" placeholder="Enter Highest Degree Achieved">
+                <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label class="required-field" for="lnText">Career Field</label>
+                <mat-select class="form-control" formControlName="careerField" placeholder="Pick one option">
+                  <mat-option value="Architecture">Architecture</mat-option>
+                  <mat-option value="Armed Services/Law Enforcement">Armed Services/Law Enforcement</mat-option>
+                  <mat-option value="Arts/Crmat-ve">Arts/Creative</mat-option>
+                  <mat-option value="Business">Business</mat-option>
+                  <mat-option value="Education">Education</mat-option>
+                  <mat-option value="Entertainment/Lifestyle">Entertainment/Lifestyle</mat-option>
+                  <mat-option value="Health Sciences/Medicine">Health Sciences/Medicine</mat-option>
+                  <mat-option value="Journalism/Media">Journalism/Media</mat-option>
+                  <mat-option value="Law">Law</mat-option>
+                  <mat-option value="Public Sector/Social Impact (Government/Nonprofit)">Public Sector/Social Impact (Government/Nonprofit)</mat-option>
+                  <mat-option value="Real Esmat-/Development">Real Esmat-/Development</mat-option>
+                  <mat-option value="Service/Hospitality Industry">Service/Hospitality Industry</mat-option>
+                  <mat-option value="Social Sciences/Psychology">Social Sciences/Psychology</mat-option>
+                  <mat-option value="STEM (Science/Technology/Engineering/mat-emat-cs)">STEM (Science/Technology/Engineering/Mathematics)</mat-option>
+                </mat-select>
+                <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+              </div>
+            </div>
+          </div>
+          
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="required-field" for="fnText"> University </label>
+                      <input type="text" class="form-control" formControlName="university" id="fnText" placeholder="Enter University">
+                      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="required-field" for="lnText">Major </label>
+                      <input type="text" class="form-control" formControlName="major" id="lnText" placeholder="Enter Your Major">
+                      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                    </div>
+                  </div>
+                </div>
+          
+          
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="required-field" for="fnText"> Company Name </label>
+                      <input type="text" class="form-control" formControlName="companyName" id="lnText" placeholder="Enter Company Name">
+                      <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                    </div>
+                  </div>
+          
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="required-field" for="fnText"> Job Title </label>
+                      <input type="text" class="form-control" formControlName="jobTitle" id="lnText" placeholder="Enter Job Title">
+                        <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                    </div>
+                  </div>   
+                </div>
+          
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="required-field" for="fnText"> How did you hear about us? </label>
+                        <mat-select class="form-control" formControlName="hearAboutus" placeholder="Pick one option">
+                              <mat-option value="Facebook">Facebook</mat-option>
+                              <mat-option value="Instangram">Instangram</mat-option>
+                              <mat-option value="Twitter">Twitter</mat-option>
+                              <mat-option value="Linkedln">Linkedln</mat-option>
+                              <mat-option value="Youtube">Youtube</mat-option>
+                              <mat-option value="School">School</mat-option>
+                              <mat-option value="Recently Working Company">Recently Working Company</mat-option>
+                              <mat-option value="Other2">Other</mat-option>
+          
+                        </mat-select>
+                      <!-- </mat-form-field> -->
+                        <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="lnText"> If hear about us is not mentioned </label>
+                      <input type="text" class="form-control" id="lnText" formControlName="ifnothearAboutus"  placeholder="Enter where did you hear about us">
+                      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is not required</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                      <hr>
+                    </div>
+                  </div> 
+                </div> 
+            <div>
+              <button mat-button matStepperPrevious type="button" class="btn btn-primary mx-2">Back</button>
+              <button mat-button matStepperNext type="button" class="btn btn-primary mx-2">Next</button>
+            </div>
+          
+    </mat-step>
+
+
+
+
+<mat-step label = "Demographic Information"  formGroupName="demographicInformation">
+ 
+<!-- form3  -->
+<div>
+<div class="row">
+  <div class="col">
+    <h1> Demographic Information</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="form-group">
+      <label class="required-field" for="fnText">Please select the best mat-gory tmat-represents your regional nationality </label>
+      <mat-select class="form-control" formControlName="region" placeholder="Pick one option">
+        <!-- <mat-option value="">-- select one --</mat-option> -->
+        <mat-option value="afghan">Afghan</mat-option>
+        <mat-option value="albanian">Albanian</mat-option>
+        <mat-option value="algerian">Algerian</mat-option>
+        <mat-option value="american">American</mat-option>
+        <mat-option value="andorran">Andorran</mat-option>
+        <mat-option value="angolan">Angolan</mat-option>
+        <mat-option value="antiguans">Antiguans</mat-option>
+        <mat-option value="argentinean">Argentinean</mat-option>
+        <mat-option value="armenian">Armenian</mat-option>
+        <mat-option value="australian">Australian</mat-option>
+        <mat-option value="austrian">Austrian</mat-option>
+        <mat-option value="azerbaijani">Azerbaijani</mat-option>
+        <mat-option value="bahamian">Bahamian</mat-option>
+        <mat-option value="bahraini">Bahraini</mat-option>
+        <mat-option value="bangladeshi">Bangladeshi</mat-option>
+        <mat-option value="barbadian">Barbadian</mat-option>
+        <mat-option value="barbudans">Barbudans</mat-option>
+        <mat-option value="mat-wana">mat-wana</mat-option>
+        <mat-option value="belarusian">Belarusian</mat-option>
+        <mat-option value="belgian">Belgian</mat-option>
+        <mat-option value="belizean">Belizean</mat-option>
+        <mat-option value="beninese">Beninese</mat-option>
+        <mat-option value="bhutanese">Bhutanese</mat-option>
+        <mat-option value="bolivian">Bolivian</mat-option>
+        <mat-option value="bosnian">Bosnian</mat-option>
+        <mat-option value="brazilian">Brazilian</mat-option>
+        <mat-option value="british">British</mat-option>
+        <mat-option value="bruneian">Bruneian</mat-option>
+        <mat-option value="bulgarian">Bulgarian</mat-option>
+        <mat-option value="burkinabe">Burkinabe</mat-option>
+        <mat-option value="burmese">Burmese</mat-option>
+        <mat-option value="burundian">Burundian</mat-option>
+        <mat-option value="cambodian">Cambodian</mat-option>
+        <mat-option value="cameroonian">Cameroonian</mat-option>
+        <mat-option value="canadian">Canadian</mat-option>
+        <mat-option value="cape verdean">Cape Verdean</mat-option>
+        <mat-option value="central african">Central African</mat-option>
+        <mat-option value="chadian">Chadian</mat-option>
+        <mat-option value="chilean">Chilean</mat-option>
+        <mat-option value="chinese">Chinese</mat-option>
+        <mat-option value="colombian">Colombian</mat-option>
+        <mat-option value="comoran">Comoran</mat-option>
+        <mat-option value="congolese">Congolese</mat-option>
+        <mat-option value="costa rican">Costa Rican</mat-option>
+        <mat-option value="crmat-an">Crmat-an</mat-option>
+        <mat-option value="cuban">Cuban</mat-option>
+        <mat-option value="cypriot">Cypriot</mat-option>
+        <mat-option value="czech">Czech</mat-option>
+        <mat-option value="danish">Danish</mat-option>
+        <mat-option value="djibouti">Djibouti</mat-option>
+        <mat-option value="dominican">Dominican</mat-option>
+        <mat-option value="dutch">Dutch</mat-option>
+        <mat-option value="east timorese">East Timorese</mat-option>
+        <mat-option value="ecuadorean">Ecuadorean</mat-option>
+        <mat-option value="egyptian">Egyptian</mat-option>
+        <mat-option value="emirian">Emirian</mat-option>
+        <mat-option value="eqmat-rial guinean">Eqmat-rial Guinean</mat-option>
+        <mat-option value="eritrean">Eritrean</mat-option>
+        <mat-option value="estonian">Estonian</mat-option>
+        <mat-option value="ethiopian">Ethiopian</mat-option>
+        <mat-option value="fijian">Fijian</mat-option>
+        <mat-option value="filipino">Filipino</mat-option>
+        <mat-option value="finnish">Finnish</mat-option>
+        <mat-option value="french">French</mat-option>
+        <mat-option value="gabonese">Gabonese</mat-option>
+        <mat-option value="gambian">Gambian</mat-option>
+        <mat-option value="georgian">Georgian</mat-option>
+        <mat-option value="german">German</mat-option>
+        <mat-option value="ghanaian">Ghanaian</mat-option>
+        <mat-option value="greek">Greek</mat-option>
+        <mat-option value="grenadian">Grenadian</mat-option>
+        <mat-option value="gmat-malan">Gmat-malan</mat-option>
+        <mat-option value="guinea-bissauan">Guinea-Bissauan</mat-option>
+        <mat-option value="guinean">Guinean</mat-option>
+        <mat-option value="guyanese">Guyanese</mat-option>
+        <mat-option value="haitian">Haitian</mat-option>
+        <mat-option value="herzegovinian">Herzegovinian</mat-option>
+        <mat-option value="honduran">Honduran</mat-option>
+        <mat-option value="hungarian">Hungarian</mat-option>
+        <mat-option value="icelander">Icelander</mat-option>
+        <mat-option value="indian">Indian</mat-option>
+        <mat-option value="indonesian">Indonesian</mat-option>
+        <mat-option value="iranian">Iranian</mat-option>
+        <mat-option value="iraqi">Iraqi</mat-option>
+        <mat-option value="irish">Irish</mat-option>
+        <mat-option value="israeli">Israeli</mat-option>
+        <mat-option value="italian">Italian</mat-option>
+        <mat-option value="ivorian">Ivorian</mat-option>
+        <mat-option value="jamaican">Jamaican</mat-option>
+        <mat-option value="japanese">Japanese</mat-option>
+        <mat-option value="jordanian">Jordanian</mat-option>
+        <mat-option value="kazakhstani">Kazakhstani</mat-option>
+        <mat-option value="kenyan">Kenyan</mat-option>
+        <mat-option value="kittian and nevisian">Kittian and Nevisian</mat-option>
+        <mat-option value="kuwaiti">Kuwaiti</mat-option>
+        <mat-option value="kyrgyz">Kyrgyz</mat-option>
+        <mat-option value="laotian">Laotian</mat-option>
+        <mat-option value="mat-ian">mat-ian</mat-option>
+        <mat-option value="lebanese">Lebanese</mat-option>
+        <mat-option value="liberian">Liberian</mat-option>
+        <mat-option value="libyan">Libyan</mat-option>
+        <mat-option value="liechtensteiner">Liechtensteiner</mat-option>
+        <mat-option value="lithuanian">Lithuanian</mat-option>
+        <mat-option value="luxembourger">Luxembourger</mat-option>
+        <mat-option value="macedonian">Macedonian</mat-option>
+        <mat-option value="malagasy">Malagasy</mat-option>
+        <mat-option value="malawian">Malawian</mat-option>
+        <mat-option value="malaysian">Malaysian</mat-option>
+        <mat-option value="maldivan">Maldivan</mat-option>
+        <mat-option value="malian">Malian</mat-option>
+        <mat-option value="maltese">Maltese</mat-option>
+        <mat-option value="marshallese">Marshallese</mat-option>
+        <mat-option value="mauritanian">Mauritanian</mat-option>
+        <mat-option value="mauritian">Mauritian</mat-option>
+        <mat-option value="mexican">Mexican</mat-option>
+        <mat-option value="micronesian">Micronesian</mat-option>
+        <mat-option value="moldovan">Moldovan</mat-option>
+        <mat-option value="monacan">Monacan</mat-option>
+        <mat-option value="mongolian">Mongolian</mat-option>
+        <mat-option value="moroccan">Moroccan</mat-option>
+        <mat-option value="mosotho">Mosotho</mat-option>
+        <mat-option value="motswana">Motswana</mat-option>
+        <mat-option value="mozambican">Mozambican</mat-option>
+        <mat-option value="namibian">Namibian</mat-option>
+        <mat-option value="nauruan">Nauruan</mat-option>
+        <mat-option value="nepalese">Nepalese</mat-option>
+        <mat-option value="new zealander">New Zealander</mat-option>
+        <mat-option value="ni-vanmat-">Ni-Vanmat-</mat-option>
+        <mat-option value="nicaraguan">Nicaraguan</mat-option>
+        <mat-option value="nigerien">Nigerien</mat-option>
+        <mat-option value="north korean">North Korean</mat-option>
+        <mat-option value="northern irish">Northern Irish</mat-option>
+        <mat-option value="norwegian">Norwegian</mat-option>
+        <mat-option value="omani">Omani</mat-option>
+        <mat-option value="pakistani">Pakistani</mat-option>
+        <mat-option value="palauan">Palauan</mat-option>
+        <mat-option value="panamanian">Panamanian</mat-option>
+        <mat-option value="papua new guinean">Papua New Guinean</mat-option>
+        <mat-option value="paraguayan">Paraguayan</mat-option>
+        <mat-option value="peruvian">Peruvian</mat-option>
+        <mat-option value="polish">Polish</mat-option>
+        <mat-option value="portuguese">Portuguese</mat-option>
+        <mat-option value="mat-ri">mat-ri</mat-option>
+        <mat-option value="romanian">Romanian</mat-option>
+        <mat-option value="russian">Russian</mat-option>
+        <mat-option value="rwandan">Rwandan</mat-option>
+        <mat-option value="saint lucian">Saint Lucian</mat-option>
+        <mat-option value="salvadoran">Salvadoran</mat-option>
+        <mat-option value="samoan">Samoan</mat-option>
+        <mat-option value="san marinese">San Marinese</mat-option>
+        <mat-option value="sao tomean">Sao Tomean</mat-option>
+        <mat-option value="saudi">Saudi</mat-option>
+        <mat-option value="scottish">Scottish</mat-option>
+        <mat-option value="senegalese">Senegalese</mat-option>
+        <mat-option value="serbian">Serbian</mat-option>
+        <mat-option value="seychellois">Seychellois</mat-option>
+        <mat-option value="sierra leonean">Sierra Leonean</mat-option>
+        <mat-option value="singaporean">Singaporean</mat-option>
+        <mat-option value="slovakian">Slovakian</mat-option>
+        <mat-option value="slovenian">Slovenian</mat-option>
+        <mat-option value="solomon islander">Solomon Islander</mat-option>
+        <mat-option value="somali">Somali</mat-option>
+        <mat-option value="south african">South African</mat-option>
+        <mat-option value="south korean">South Korean</mat-option>
+        <mat-option value="spanish">Spanish</mat-option>
+        <mat-option value="sri lankan">Sri Lankan</mat-option>
+        <mat-option value="sudanese">Sudanese</mat-option>
+        <mat-option value="surinamer">Surinamer</mat-option>
+        <mat-option value="swazi">Swazi</mat-option>
+        <mat-option value="swedish">Swedish</mat-option>
+        <mat-option value="swiss">Swiss</mat-option>
+        <mat-option value="syrian">Syrian</mat-option>
+        <mat-option value="taiwanese">Taiwanese</mat-option>
+        <mat-option value="tajik">Tajik</mat-option>
+        <mat-option value="tanzanian">Tanzanian</mat-option>
+        <mat-option value="thai">Thai</mat-option>
+        <mat-option value="togolese">Togolese</mat-option>
+        <mat-option value="tongan">Tongan</mat-option>
+        <mat-option value="trinidadian or tobagonian">Trinidadian or Tobagonian</mat-option>
+        <mat-option value="tunisian">Tunisian</mat-option>
+        <mat-option value="turkish">Turkish</mat-option>
+        <mat-option value="tuvaluan">Tuvaluan</mat-option>
+        <mat-option value="ugandan">Ugandan</mat-option>
+        <mat-option value="ukrainian">Ukrainian</mat-option>
+        <mat-option value="uruguayan">Uruguayan</mat-option>
+        <mat-option value="uzbekistani">Uzbekistani</mat-option>
+        <mat-option value="venezuelan">Venezuelan</mat-option>
+        <mat-option value="vietnamese">Vietnamese</mat-option>
+        <mat-option value="welsh">Welsh</mat-option>
+        <mat-option value="yemenite">Yemenite</mat-option>
+        <mat-option value="zambian">Zambian</mat-option>
+        <mat-option value="zimbabwean">Zimbabwean</mat-option>
+      </mat-select>
+      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+    </div>
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <!-- multiple choose -->
+      <label class="required-field" for="lnText">Do you identify from any other region? </label>
+      <mat-select class="form-control" formControlName="otherregion" placeholder="Pick one option">
+        <!-- <mat-option value="">-- select one --</mat-option> -->
+        <mat-option value="afghan">Afghan</mat-option>
+        <mat-option value="albanian">Albanian</mat-option>
+        <mat-option value="algerian">Algerian</mat-option>
+        <mat-option value="american">American</mat-option>
+        <mat-option value="andorran">Andorran</mat-option>
+        <mat-option value="angolan">Angolan</mat-option>
+        <mat-option value="antiguans">Antiguans</mat-option>
+        <mat-option value="argentinean">Argentinean</mat-option>
+        <mat-option value="armenian">Armenian</mat-option>
+        <mat-option value="australian">Australian</mat-option>
+        <mat-option value="austrian">Austrian</mat-option>
+        <mat-option value="azerbaijani">Azerbaijani</mat-option>
+        <mat-option value="bahamian">Bahamian</mat-option>
+        <mat-option value="bahraini">Bahraini</mat-option>
+        <mat-option value="bangladeshi">Bangladeshi</mat-option>
+        <mat-option value="barbadian">Barbadian</mat-option>
+        <mat-option value="barbudans">Barbudans</mat-option>
+        <mat-option value="mat-wana">mat-wana</mat-option>
+        <mat-option value="belarusian">Belarusian</mat-option>
+        <mat-option value="belgian">Belgian</mat-option>
+        <mat-option value="belizean">Belizean</mat-option>
+        <mat-option value="beninese">Beninese</mat-option>
+        <mat-option value="bhutanese">Bhutanese</mat-option>
+        <mat-option value="bolivian">Bolivian</mat-option>
+        <mat-option value="bosnian">Bosnian</mat-option>
+        <mat-option value="brazilian">Brazilian</mat-option>
+        <mat-option value="british">British</mat-option>
+        <mat-option value="bruneian">Bruneian</mat-option>
+        <mat-option value="bulgarian">Bulgarian</mat-option>
+        <mat-option value="burkinabe">Burkinabe</mat-option>
+        <mat-option value="burmese">Burmese</mat-option>
+        <mat-option value="burundian">Burundian</mat-option>
+        <mat-option value="cambodian">Cambodian</mat-option>
+        <mat-option value="cameroonian">Cameroonian</mat-option>
+        <mat-option value="canadian">Canadian</mat-option>
+        <mat-option value="cape verdean">Cape Verdean</mat-option>
+        <mat-option value="central african">Central African</mat-option>
+        <mat-option value="chadian">Chadian</mat-option>
+        <mat-option value="chilean">Chilean</mat-option>
+        <mat-option value="chinese">Chinese</mat-option>
+        <mat-option value="colombian">Colombian</mat-option>
+        <mat-option value="comoran">Comoran</mat-option>
+        <mat-option value="congolese">Congolese</mat-option>
+        <mat-option value="costa rican">Costa Rican</mat-option>
+        <mat-option value="crmat-an">Crmat-an</mat-option>
+        <mat-option value="cuban">Cuban</mat-option>
+        <mat-option value="cypriot">Cypriot</mat-option>
+        <mat-option value="czech">Czech</mat-option>
+        <mat-option value="danish">Danish</mat-option>
+        <mat-option value="djibouti">Djibouti</mat-option>
+        <mat-option value="dominican">Dominican</mat-option>
+        <mat-option value="dutch">Dutch</mat-option>
+        <mat-option value="east timorese">East Timorese</mat-option>
+        <mat-option value="ecuadorean">Ecuadorean</mat-option>
+        <mat-option value="egyptian">Egyptian</mat-option>
+        <mat-option value="emirian">Emirian</mat-option>
+        <mat-option value="eqmat-rial guinean">Eqmat-rial Guinean</mat-option>
+        <mat-option value="eritrean">Eritrean</mat-option>
+        <mat-option value="estonian">Estonian</mat-option>
+        <mat-option value="ethiopian">Ethiopian</mat-option>
+        <mat-option value="fijian">Fijian</mat-option>
+        <mat-option value="filipino">Filipino</mat-option>
+        <mat-option value="finnish">Finnish</mat-option>
+        <mat-option value="french">French</mat-option>
+        <mat-option value="gabonese">Gabonese</mat-option>
+        <mat-option value="gambian">Gambian</mat-option>
+        <mat-option value="georgian">Georgian</mat-option>
+        <mat-option value="german">German</mat-option>
+        <mat-option value="ghanaian">Ghanaian</mat-option>
+        <mat-option value="greek">Greek</mat-option>
+        <mat-option value="grenadian">Grenadian</mat-option>
+        <mat-option value="gmat-malan">Gmat-malan</mat-option>
+        <mat-option value="guinea-bissauan">Guinea-Bissauan</mat-option>
+        <mat-option value="guinean">Guinean</mat-option>
+        <mat-option value="guyanese">Guyanese</mat-option>
+        <mat-option value="haitian">Haitian</mat-option>
+        <mat-option value="herzegovinian">Herzegovinian</mat-option>
+        <mat-option value="honduran">Honduran</mat-option>
+        <mat-option value="hungarian">Hungarian</mat-option>
+        <mat-option value="icelander">Icelander</mat-option>
+        <mat-option value="indian">Indian</mat-option>
+        <mat-option value="indonesian">Indonesian</mat-option>
+        <mat-option value="iranian">Iranian</mat-option>
+        <mat-option value="iraqi">Iraqi</mat-option>
+        <mat-option value="irish">Irish</mat-option>
+        <mat-option value="israeli">Israeli</mat-option>
+        <mat-option value="italian">Italian</mat-option>
+        <mat-option value="ivorian">Ivorian</mat-option>
+        <mat-option value="jamaican">Jamaican</mat-option>
+        <mat-option value="japanese">Japanese</mat-option>
+        <mat-option value="jordanian">Jordanian</mat-option>
+        <mat-option value="kazakhstani">Kazakhstani</mat-option>
+        <mat-option value="kenyan">Kenyan</mat-option>
+        <mat-option value="kittian and nevisian">Kittian and Nevisian</mat-option>
+        <mat-option value="kuwaiti">Kuwaiti</mat-option>
+        <mat-option value="kyrgyz">Kyrgyz</mat-option>
+        <mat-option value="laotian">Laotian</mat-option>
+        <mat-option value="mat-ian">mat-ian</mat-option>
+        <mat-option value="lebanese">Lebanese</mat-option>
+        <mat-option value="liberian">Liberian</mat-option>
+        <mat-option value="libyan">Libyan</mat-option>
+        <mat-option value="liechtensteiner">Liechtensteiner</mat-option>
+        <mat-option value="lithuanian">Lithuanian</mat-option>
+        <mat-option value="luxembourger">Luxembourger</mat-option>
+        <mat-option value="macedonian">Macedonian</mat-option>
+        <mat-option value="malagasy">Malagasy</mat-option>
+        <mat-option value="malawian">Malawian</mat-option>
+        <mat-option value="malaysian">Malaysian</mat-option>
+        <mat-option value="maldivan">Maldivan</mat-option>
+        <mat-option value="malian">Malian</mat-option>
+        <mat-option value="maltese">Maltese</mat-option>
+        <mat-option value="marshallese">Marshallese</mat-option>
+        <mat-option value="mauritanian">Mauritanian</mat-option>
+        <mat-option value="mauritian">Mauritian</mat-option>
+        <mat-option value="mexican">Mexican</mat-option>
+        <mat-option value="micronesian">Micronesian</mat-option>
+        <mat-option value="moldovan">Moldovan</mat-option>
+        <mat-option value="monacan">Monacan</mat-option>
+        <mat-option value="mongolian">Mongolian</mat-option>
+        <mat-option value="moroccan">Moroccan</mat-option>
+        <mat-option value="mosotho">Mosotho</mat-option>
+        <mat-option value="motswana">Motswana</mat-option>
+        <mat-option value="mozambican">Mozambican</mat-option>
+        <mat-option value="namibian">Namibian</mat-option>
+        <mat-option value="nauruan">Nauruan</mat-option>
+        <mat-option value="nepalese">Nepalese</mat-option>
+        <mat-option value="new zealander">New Zealander</mat-option>
+        <mat-option value="ni-vanmat-">Ni-Vanmat-</mat-option>
+        <mat-option value="nicaraguan">Nicaraguan</mat-option>
+        <mat-option value="nigerien">Nigerien</mat-option>
+        <mat-option value="north korean">North Korean</mat-option>
+        <mat-option value="northern irish">Northern Irish</mat-option>
+        <mat-option value="norwegian">Norwegian</mat-option>
+        <mat-option value="omani">Omani</mat-option>
+        <mat-option value="pakistani">Pakistani</mat-option>
+        <mat-option value="palauan">Palauan</mat-option>
+        <mat-option value="panamanian">Panamanian</mat-option>
+        <mat-option value="papua new guinean">Papua New Guinean</mat-option>
+        <mat-option value="paraguayan">Paraguayan</mat-option>
+        <mat-option value="peruvian">Peruvian</mat-option>
+        <mat-option value="polish">Polish</mat-option>
+        <mat-option value="portuguese">Portuguese</mat-option>
+        <mat-option value="mat-ri">mat-ri</mat-option>
+        <mat-option value="romanian">Romanian</mat-option>
+        <mat-option value="russian">Russian</mat-option>
+        <mat-option value="rwandan">Rwandan</mat-option>
+        <mat-option value="saint lucian">Saint Lucian</mat-option>
+        <mat-option value="salvadoran">Salvadoran</mat-option>
+        <mat-option value="samoan">Samoan</mat-option>
+        <mat-option value="san marinese">San Marinese</mat-option>
+        <mat-option value="sao tomean">Sao Tomean</mat-option>
+        <mat-option value="saudi">Saudi</mat-option>
+        <mat-option value="scottish">Scottish</mat-option>
+        <mat-option value="senegalese">Senegalese</mat-option>
+        <mat-option value="serbian">Serbian</mat-option>
+        <mat-option value="seychellois">Seychellois</mat-option>
+        <mat-option value="sierra leonean">Sierra Leonean</mat-option>
+        <mat-option value="singaporean">Singaporean</mat-option>
+        <mat-option value="slovakian">Slovakian</mat-option>
+        <mat-option value="slovenian">Slovenian</mat-option>
+        <mat-option value="solomon islander">Solomon Islander</mat-option>
+        <mat-option value="somali">Somali</mat-option>
+        <mat-option value="south african">South African</mat-option>
+        <mat-option value="south korean">South Korean</mat-option>
+        <mat-option value="spanish">Spanish</mat-option>
+        <mat-option value="sri lankan">Sri Lankan</mat-option>
+        <mat-option value="sudanese">Sudanese</mat-option>
+        <mat-option value="surinamer">Surinamer</mat-option>
+        <mat-option value="swazi">Swazi</mat-option>
+        <mat-option value="swedish">Swedish</mat-option>
+        <mat-option value="swiss">Swiss</mat-option>
+        <mat-option value="syrian">Syrian</mat-option>
+        <mat-option value="taiwanese">Taiwanese</mat-option>
+        <mat-option value="tajik">Tajik</mat-option>
+        <mat-option value="tanzanian">Tanzanian</mat-option>
+        <mat-option value="thai">Thai</mat-option>
+        <mat-option value="togolese">Togolese</mat-option>
+        <mat-option value="tongan">Tongan</mat-option>
+        <mat-option value="trinidadian or tobagonian">Trinidadian or Tobagonian</mat-option>
+        <mat-option value="tunisian">Tunisian</mat-option>
+        <mat-option value="turkish">Turkish</mat-option>
+        <mat-option value="tuvaluan">Tuvaluan</mat-option>
+        <mat-option value="ugandan">Ugandan</mat-option>
+        <mat-option value="ukrainian">Ukrainian</mat-option>
+        <mat-option value="uruguayan">Uruguayan</mat-option>
+        <mat-option value="uzbekistani">Uzbekistani</mat-option>
+        <mat-option value="venezuelan">Venezuelan</mat-option>
+        <mat-option value="vietnamese">Vietnamese</mat-option>
+        <mat-option value="welsh">Welsh</mat-option>
+        <mat-option value="yemenite">Yemenite</mat-option>
+        <mat-option value="zambian">Zambian</mat-option>
+        <mat-option value="zimbabwean">Zimbabwean</mat-option>
+      </mat-select>
+      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <div class="form-group">
+      <label class="required-field"  for="fnText">How do you identify your race/ethnicity?</label>
+      <mat-select class="form-control" formControlName="raceEthnicity" placeholder="Pick one option">
+        <mat-option value="Yes">Yes</mat-option>
+        <mat-option value="No">No</mat-option>
+      </mat-select>
+      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+    </div>
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <label class="required-field" for="lnText">Languages Spoken (Other than English) :</label>
+      <mat-select class="form-control" formControlName="languages" placeholder="Pick one option">
+        <mat-option value="AF">Afrikaans</mat-option>
+        <mat-option value="SQ">Albanian</mat-option>
+        <mat-option value="AR">Arabic</mat-option>
+        <mat-option value="HY">Armenian</mat-option>
+        <mat-option value="EU">Basque</mat-option>
+        <mat-option value="BN">Bengali</mat-option>
+        <mat-option value="BG">Bulgarian</mat-option>
+        <mat-option value="CA">mat-lan</mat-option>
+        <mat-option value="KM">Cambodian</mat-option>
+        <mat-option value="ZH">Chinese (Mandarin)</mat-option>
+        <mat-option value="HR">Crmat-an</mat-option>
+        <mat-option value="CS">Czech</mat-option>
+        <mat-option value="DA">Danish</mat-option>
+        <mat-option value="NL">Dutch</mat-option>
+        <mat-option value="ET">Estonian</mat-option>
+        <mat-option value="FJ">Fiji</mat-option>
+        <mat-option value="FI">Finnish</mat-option>
+        <mat-option value="FR">French</mat-option>
+        <mat-option value="KA">Georgian</mat-option>
+        <mat-option value="DE">German</mat-option>
+        <mat-option value="EL">Greek</mat-option>
+        <mat-option value="GU">Gujamat-</mat-option>
+        <mat-option value="HE">Hebrew</mat-option>
+        <mat-option value="HI">Hindi</mat-option>
+        <mat-option value="HU">Hungarian</mat-option>
+        <mat-option value="IS">Icelandic</mat-option>
+        <mat-option value="ID">Indonesian</mat-option>
+        <mat-option value="GA">Irish</mat-option>
+        <mat-option value="IT">Italian</mat-option>
+        <mat-option value="JA">Japanese</mat-option>
+        <mat-option value="JW">Javanese</mat-option>
+        <mat-option value="KO">Korean</mat-option>
+        <mat-option value="LA">mat-n</mat-option>
+        <mat-option value="LV">mat-ian</mat-option>
+        <mat-option value="LT">Lithuanian</mat-option>
+        <mat-option value="MK">Macedonian</mat-option>
+        <mat-option value="MS">Malay</mat-option>
+        <mat-option value="ML">Malayalam</mat-option>
+        <mat-option value="MT">Maltese</mat-option>
+        <mat-option value="MI">Maori</mat-option>
+        <mat-option value="MR">Mamat-i</mat-option>
+        <mat-option value="MN">Mongolian</mat-option>
+        <mat-option value="NE">Nepali</mat-option>
+        <mat-option value="NO">Norwegian</mat-option>
+        <mat-option value="FA">Persian</mat-option>
+        <mat-option value="PL">Polish</mat-option>
+        <mat-option value="PT">Portuguese</mat-option>
+        <mat-option value="PA">Punjabi</mat-option>
+        <mat-option value="QU">Quechua</mat-option>
+        <mat-option value="RO">Romanian</mat-option>
+        <mat-option value="RU">Russian</mat-option>
+        <mat-option value="SM">Samoan</mat-option>
+        <mat-option value="SR">Serbian</mat-option>
+        <mat-option value="SK">Slovak</mat-option>
+        <mat-option value="SL">Slovenian</mat-option>
+        <mat-option value="ES">Spanish</mat-option>
+        <mat-option value="SW">Swahili</mat-option>
+        <mat-option value="SV">Swedish </mat-option>
+        <mat-option value="TA">Tamil</mat-option>
+        <mat-option value="TT">mat-r</mat-option>
+        <mat-option value="TE">Telugu</mat-option>
+        <mat-option value="TH">Thai</mat-option>
+        <mat-option value="BO">Tibetan</mat-option>
+        <mat-option value="TO">Tonga</mat-option>
+        <mat-option value="TR">Turkish</mat-option>
+        <mat-option value="UK">Ukrainian</mat-option>
+        <mat-option value="UR">Urdu</mat-option>
+        <mat-option value="UZ">Uzbek</mat-option>
+        <mat-option value="VI">Vietnamese</mat-option>
+        <mat-option value="CY">Welsh</mat-option>
+        <mat-option value="XH">Xhosa</mat-option>
+      </mat-select>
+      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col">
+    <div class="form-group">
+      <label  for="fnText">Do you identify as an immigrant or child of immigrant? </label>
+      <mat-select class="form-control" formControlName="immigrant" placeholder="Pick one option">
+        <mat-option value="Yes">Yes</mat-option>
+        <mat-option value="No">No</mat-option>
+      </mat-select>
+      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+    </div>
+  </div>
+
+</div>
+
+      <!-- sepamat- line -->
+      <div class="row">
+          <div class="col">
+            <hr>
+          </div>
+        </div> 
+</div>
+
+<div>
+  <button mat-button matStepperPrevious type="button" class="btn btn-primary mx-2">Back</button>
+  <button mat-button matStepperNext type="button" class="btn btn-primary mx-2">Next</button>
+</div>
+</mat-step>
+
+
+<mat-step label = "Headshot"  formGroupName="confirm">
+  <div>
+    <h1> Photography Waiver and Release Form</h1>
+    <p>Please fill out the Photography Waiver Form HERE</p>
+
+    <div class="col">
+      <div class="form-group">
+        <label class="form-check-inline" for="inlineRadio2"  class="required-field">Please provide us with a Headshot (Linked In Profile Picture is fine!)</label>
+        <!-- <form action="/action_page.php">
+          <input type="file" id="myFile" name="filename">
+        </form> -->
+        </div>
+        <small class="form-check-inline form-text custom-invalid-feedback"></small>
+    </div> 
+</div> 
+  <div>
+    <button mat-button matStepperPrevious type="button" class="btn btn-primary mx-2">Back</button>
+    <button mat-button matStepperNext type="button" class="btn btn-primary mx-2">Next</button>
+  </div>
+</mat-step>
+
+<mat-step label = "Submit"  formGroupName="confirm">
+  <!-- form6 -->
+<div>
+  <h1> Thank you for applying to be a SPEAKHIRE Champion! Someone will be in touch soon by email or phone with next steps. Have a great day!</h1>
+</div> 
+  <div>
+    <button mat-button matStepperPrevious type="button" class="btn btn-primary mx-2">Back</button>
+    <button mat-button matStepperNext type="button" class="btn btn-primary mx-2">Next</button>
+  </div>
+</mat-step>
+      
+</mat-horizontal-stepper> 
+
+<!-- form4 -->
+
+
+
+
+
+
+  <!-- <a class="btn btn-primary mx-2" *ngIf ="step != 1 && step != 6" (click)="previous()">Previous</a>
+  <button mat-button type="submit" class="btn btn-primary mx-2" *ngIf = "step != 5 && step != 6">Next</button>
+  <button type="submit" class="btn btn-primary mx-2" *ngIf = "step == 5">Submit</button>
+<br>
+<br> -->
+    <pre>{{multistep.value | json}}</pre>
+
+</form> 
+
+
+
+
+
+
+        
+
+
+    
+
+
+

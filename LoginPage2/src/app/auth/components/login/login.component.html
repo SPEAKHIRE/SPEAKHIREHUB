@@ -1,0 +1,33 @@
+<div class = "row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Login</h3>
+        <form>
+            <div class="mb-3">
+              <label for="loginUsername" class="form-label">Email or Username</label>
+              <input type="email" 
+                     type = "text" 
+                     class="form-control" 
+                     id="loginUsername"
+                     placeholder="Enter email or username">
+            </div>
+
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" 
+                     class="form-control" 
+                     id="exampleInputPassword1" 
+                     placeholder="Enter password">
+            </div>
+            <a [routerLink] = "['/reset-password']" >Forget Password or Username </a>
+              <!-- <div id="loginPassword" class="form-text">Forget password or username</div> -->
+            
+            
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Save login information</label>
+            </div>
+           
+            <button type="button" (click) ="onClick()" class="btn btn-primary" >Login <i class="fas fa-sign-in-alt"></i></button>
+          </form>
+    </div>
+</div>
