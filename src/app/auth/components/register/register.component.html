@@ -1,9 +1,9 @@
-<div class="container tb-10">
+<div class="container tb-10" >
 
-<form (ngSubmit) = "submit()" [formGroup]="multistep">
+<form (ngSubmit)="submit()" [formGroup]="multistep" >
 
- <mat-horizontal-stepper>
-    <mat-step label = "Confirm your eligibility" formGroupName="confirm">
+ <mat-horizontal-stepper  id="form-container" >
+    <mat-step label = "Confirm your eligibility" formGroupName="confirm" >
       <!-- Page 1: Confirm your eligibility -->
           <div>
             <h1> Hello! Thank you for your interest in becoming a SPEAKHIRE Career Pathways Champion!  </h1>
@@ -49,7 +49,7 @@
                 <div class="form-group">
                   <label class="required-field" for="fnText">First Name</label>
                   <input type="text" class="form-control" formControlName="fname" id="fnText" placeholder="Enter first name">
-                  <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                  <small class = "text-dangaer">Field is required</small>
                 </div>
               </div>
               <div class="col">

@@ -1,3 +1,14 @@
+
+.form-control.ng-touched.ng-invalid {
+    border:1px solid red;
+   }
+   .form-control.ng-touched.ng-valid {
+    border:1px solid green;
+   }
+   
+   
+
+
 .required-field::before {
     content: "*";
     color: red;
@@ -181,3 +192,4 @@ hr {
     from    { -webkit-transform:translateX(200%); }
     to      { -webkit-transform: translateX(0); }
 }
+
