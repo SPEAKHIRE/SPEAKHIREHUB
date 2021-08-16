@@ -1,6 +1,24 @@
-# LoginPage2
+# Frontend SPEAKHIRE
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+
+## User Stories
+
+The following functionality is completed:
+
+- [x] Login Page, Reset Password, Register Page
+
+The following functionality will be working on:
+
+- [ ] RegisterPage: Validation 
+- [ ] RegisterPage: CSS
+
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+--------------
 
 ## Development server
 
