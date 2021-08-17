@@ -8,11 +8,11 @@ SPEAKHIREHUB/src/app/auth/components/
 
 The following functionality is completed:
 
-- [x] Page 1: Validation for require
+- [x] Page 2: Validation for require
 
 The following functionality will be working on:
 
-- [ ] Page 1, Page 2, Page 3 Validation for require
+- [ ] Page 1, Page 3 Validation for require
 - [ ] Enter Password and Reenter Password need to be match
 - [ ] User will not able to move to next page if recent require do not fill.
 
