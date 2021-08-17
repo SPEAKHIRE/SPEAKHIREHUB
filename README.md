@@ -4,16 +4,17 @@
 
 SPEAKHIREHUB/src/app/auth/components/
 
-## User Stories
+## User Stories: Validation
 
 The following functionality is completed:
 
-- [x] Login Page, Reset Password, Register Page
+- [x] Page 1: Validation for require
 
 The following functionality will be working on:
 
-- [ ] RegisterPage: Validation 
-- [ ] RegisterPage: CSS
+- [ ] Enter Password and Reenter Password need to be match
+- [ ] User will not able to move to next page if recent require do not fill.
+- [ ] Page 1, Page 2, Page 3 Validation for require
 
 
 ## Video Walkthrough
