@@ -1,22 +1,30 @@
 # Frontend SPEAKHIRE
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+## Code Direction: Login, Register, Forget Password
 
-## User Stories
+SPEAKHIREHUB/src/app/auth/components/
+
+## User Stories: Validation
 
 The following functionality is completed:
 
-- [x] Login Page, Reset Password, Register Page
+- [x] Page 2(profileInformation): Validation for require
+- [x] Email, Phone numbers, max && min letters Validation
 
 The following functionality will be working on:
 
-- [ ] RegisterPage: Validation 
-- [ ] RegisterPage: CSS
+- [ ] Page 1(confirmEligible), Page 3(personalProfProfessional), Page 4(demographicInformation) Validation for require
+- [ ] Enter Password and Reenter Password need to be match
+- [ ] User will not able to move to next page if recent require do not fill.
+
 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+
+
+![](https://i.imgur.com/wa5LNkT.gif)
 
 --------------
 
