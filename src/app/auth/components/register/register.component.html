@@ -1,8 +1,8 @@
-<div class="container tb-10" >
+<div class="container tb-10" class="col-sm-12 shadow round tb-9">
 
-<form (ngSubmit)="submit()" [formGroup]="multistep" >
+<form [formGroup]="multistep">
 
- <mat-horizontal-stepper  id="form-container" >
+ <mat-horizontal-stepper  >
     <mat-step label = "Confirm your eligibility" formGroupName="confirm" >
       <!-- Page 1: Confirm your eligibility -->
           <div>
@@ -49,14 +49,16 @@
                 <div class="form-group">
                   <label class="required-field" for="fnText">First Name</label>
                   <input type="text" class="form-control" formControlName="fname" id="fnText" placeholder="Enter first name">
-                  <small class = "text-dangaer">Field is required</small>
+                  <small *ngIf="fname?.invalid && fname?.touched" class="text-danger">Field is required</small>
+                  <small style="visibility:hidden;" *ngIf="!(fname?.invalid && fname?.touched)" > n</small>
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
                   <label class="required-field" for="lnText">Last Name</label>
                   <input type="text" class="form-control" formControlName="lname" id="lnText" placeholder="Enter last name">
-                  <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                  <small *ngIf="lname?.invalid && lname?.touched" class="text-danger">Field is required</small>
+                  <small style="visibility:hidden;" *ngIf="!(lname?.invalid && lname?.touched)" > n</small>
                 </div>
               </div>
             </div>
@@ -65,8 +67,9 @@
               <div class="col">
                 <div class="form-group">
                   <label class="required-field" for="fnText">Username</label>
-                  <input type="text" class="form-control" formControlName="uname" id="fnText" placeholder="Enter Username">
-                  <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                  <input type="text" class="form-control" formControlName="uname" id="fnText" placeholder="Enter Username ">
+                  <small *ngIf="uname?.invalid && uname?.touched" class="text-danger">Field is required, Minimum 5 letters</small>
+                  <small style="visibility:hidden;" *ngIf="!(uname?.invalid && uname?.touched)" > n</small>
                 </div>
               </div>
               <div class="col">
@@ -74,7 +77,8 @@
                   <label class="form-check-inline" for="inlineRadio2"  class="required-field"> Date of Birth</label>
                     <input type="date" class="form-control" formControlName="dBirth"  name="expirymat-" id="mat-Input1" >
                   </div>
-                  <small class="form-check-inline form-text custom-invalid-feedback">Pick one option.</small>
+                  <small *ngIf="dBirth?.invalid && dBirth?.touched" class="text-danger">Field is required</small>
+                  <small style="visibility:hidden;" *ngIf="!(dBirth?.invalid && dBirth?.touched)" > n</small>
               </div>
             </div>
 
@@ -83,14 +87,16 @@
                 <div class="form-group">
                   <label class="required-field" for="fnText">Password</label>
                   <input type="password" class="form-control" formControlName="passWord"  id="fnText" placeholder="Enter Password">
-                  <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                  <small *ngIf="passWord?.invalid && passWord?.touched" class="text-danger">Field is required</small>
+                  <small style="visibility:hidden;" *ngIf="!(passWord?.invalid && passWord?.touched)" > n</small>
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
                   <label class="required-field" for="lnText">Reenter Password</label>
                   <input type="password" class="form-control" formControlName="reenterPassWord"  id="lnText" placeholder="Enter Password">
-                  <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                  <small *ngIf="reenterPassWord?.invalid && reenterPassWord?.touched" class="text-danger">Field is required</small>
+                  <small style="visibility:hidden;" *ngIf="!(reenterPassWord?.invalid && reenterPassWord?.touched)" > n</small>
                 </div>
               </div>
             </div>
@@ -105,14 +111,16 @@
                     <div class="form-group">
                       <label class="required-field" for="fnText"> Email </label>
                       <input type="text" class="form-control"  formControlName="email" id="fnText" placeholder="Enter Email">
-                      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                      <small *ngIf="email?.invalid && email?.touched" class="text-danger">Field is required</small>
+                      <small style="visibility:hidden;" *ngIf="!(email?.invalid && email?.touched)" > n</small>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-group">
                       <label class="required-field" for="lnText"> Phone Number</label>
                       <input type="text" class="form-control" formControlName="pNumber" id="lnText" placeholder="Enter Phone Number">
-                      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                      <small *ngIf="pNumber?.invalid && pNumber?.touched" class="text-danger">Field is required</small>
+                      <small style="visibility:hidden;" *ngIf="!(pNumber?.invalid && pNumber?.touched)" > n</small>
                     </div>
                   </div>
                 </div>
@@ -129,7 +137,8 @@
                           <mat-option value="Prefer not to say"> Prefer not to say </mat-option>
                           <mat-option value="Other"> Other </mat-option>
                         </mat-select>
-                        <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                        <small *ngIf="gender?.invalid && gender?.touched" class="text-danger">Field is required</small>
+                        <small style="visibility:hidden;" *ngIf="!(gender?.invalid && gender?.touched)" > n</small>
                     </div>
                   </div>
 
@@ -141,7 +150,8 @@
                           <mat-option value="U.S. Permanent Resident">U.S. Permanent Resident</mat-option>
                           <mat-option value="Non-Citizen">Non-Citizen</mat-option>
                         </mat-select>
-                        <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                        <small *ngIf="citizenship?.invalid && citizenship?.touched" class="text-danger">Field is required</small>
+                        <small style="visibility:hidden;" *ngIf="!(citizenship?.invalid && citizenship?.touched)" > n</small>
                     </div>
                   </div>
                 </div>
@@ -179,14 +189,14 @@
                               <mat-option value="Non-Religion">Non-Religion</mat-option>
                               <mat-option value="Other1">Other</mat-option>
                         </mat-select>
-                        <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                        <small *ngIf="religion?.invalid && religion?.touched" class="text-danger">Field is required</small>
+                        <small style="visibility:hidden;" *ngIf="!(religion?.invalid && religion?.touched)" > n</small>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-group">
                       <label for="lnText"> If religion is not mentioned </label>
                       <input type="text" class="form-control" formControlName="ifnotreligion" id="lnText" placeholder="Enter religion">
-                      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is not required</small>
                     </div>
                   </div>
                 </div>
@@ -988,7 +998,7 @@
   <button type="submit" class="btn btn-primary mx-2" *ngIf = "step == 5">Submit</button>
 <br>
 <br> -->
-    <pre>{{multistep.value | json}}</pre>
+    <!-- <pre>{{multistep.value | json}}</pre> -->
 
 </form> 
 
