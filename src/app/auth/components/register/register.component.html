@@ -2,7 +2,7 @@
 
 <form [formGroup]="multistep">
 
- <mat-horizontal-stepper  >
+ <mat-horizontal-stepper>
     <mat-step label = "Confirm your eligibility" formGroupName="confirm" >
       <!-- Page 1: Confirm your eligibility -->
           <div>
@@ -210,8 +210,8 @@
                   </div> 
 
             <div>
-              <button mat-button matStepperPrevious type="button" class="btn btn-primary mx-2">Back</button>
-              <button mat-button matStepperNext type="button" class="btn btn-primary mx-2">Next</button>
+              <button mat-button matStepperPrevious type="button"  class="btn btn-primary mx-2">Back</button>
+              <button mat-button matStepperNext type="button" [disabled]="!multistep.valid" class="btn btn-primary mx-2">Next</button>
             </div>
         </div>
     </mat-step>
