@@ -9,6 +9,7 @@ SPEAKHIREHUB/src/app/auth/components/
 The following functionality is completed:
 
 - [x] Page 2(profileInformation): Validation for require
+- [x] Email, Phone numbers, max && min letters Validation
 
 The following functionality will be working on:
 
@@ -21,6 +22,8 @@ The following functionality will be working on:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+
+
 ![](https://i.imgur.com/wa5LNkT.gif)
 
 --------------
