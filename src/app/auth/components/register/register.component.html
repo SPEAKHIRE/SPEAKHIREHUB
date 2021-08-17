@@ -22,6 +22,9 @@
                 <br>
                 <mat-radio-button value="2">No</mat-radio-button>
               </mat-radio-group>
+
+              <small *ngIf="confirmEligible?.invalid && confirmEligible?.touched" class="text-danger">Field is required</small>
+              <small style="visibility:hidden;" *ngIf="!(confirmEligible?.invalid && confirmEligible?.touched)" > n</small>
               <br>
               <br>
 
@@ -269,14 +272,16 @@
               <div class="form-group">
                 <label class="required-field" for="fnText">Mailing Address</label>
                 <input type="text" class="form-control" formControlName="mailingAddress" id="fnText" placeholder="Enter Mailing Address">
-                <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                <small *ngIf="mailingAddress?.invalid && mailingAddress?.touched" class="text-danger">Field is required</small>
+                <small style="visibility:hidden;" *ngIf="!(mailingAddress?.invalid && mailingAddress?.touched)" > n</small>
               </div>
             </div>
             <div class="col">
               <div class="form-group">
                 <label class="required-field" for="lnText">Linkedln URL</label>
                 <input type="text" class="form-control" formControlName="linkedlnURL" id="lnText" placeholder="Enter Linkedln UR">
-                <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                <small *ngIf="linkedlnURL?.invalid && linkedlnURL?.touched" class="text-danger">Field is required</small>
+                <small style="visibility:hidden;" *ngIf="!(linkedlnURL?.invalid && linkedlnURL?.touched)" > n</small>
               </div>
             </div>
           </div>
@@ -298,7 +303,8 @@
                   <mat-option value="San Francisco, CA"> San Francisco, CA </mat-option>
                   <mat-option value="Not one of above"> Not one of above </mat-option>
                 </mat-select>
-                <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                <small *ngIf="cityOfResident?.invalid && cityOfResident?.touched" class="text-danger">Field is required</small>
+                <small style="visibility:hidden;" *ngIf="!(cityOfResident?.invalid && cityOfResident?.touched)" > n</small>
             </div>
           
             </div>
@@ -309,7 +315,8 @@
                   <input type="file" id="myFile" formControlName="resume" name="filename">
                 </form> -->
                 </div>
-                <small class="form-check-inline form-text custom-invalid-feedback">Pick one option.</small>
+                <!-- <small *ngIf="cityOfResident?.invalid && cityOfResident?.touched" class="text-danger">Field is required</small>
+                <small style="visibility:hidden;" *ngIf="!(cityOfResident?.invalid && cityOfResident?.touched)" > n</small> -->
             </div>
           </div>
           
@@ -318,7 +325,8 @@
               <div class="form-group">
                 <label class="required-field" for="fnText">Highest Degree Achieved</label>
                 <input type="password" class="form-control" formControlName="highestDegreeAchieved" id="fnText" placeholder="Enter Highest Degree Achieved">
-                <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                <small *ngIf="highestDegreeAchieved?.invalid && highestDegreeAchieved?.touched" class="text-danger">Field is required</small>
+                <small style="visibility:hidden;" *ngIf="!(highestDegreeAchieved?.invalid && highestDegreeAchieved?.touched)" > n</small>
               </div>
             </div>
             <div class="col">
@@ -340,7 +348,8 @@
                   <mat-option value="Social Sciences/Psychology">Social Sciences/Psychology</mat-option>
                   <mat-option value="STEM (Science/Technology/Engineering/mat-emat-cs)">STEM (Science/Technology/Engineering/Mathematics)</mat-option>
                 </mat-select>
-                <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                <small *ngIf="careerField?.invalid && careerField?.touched" class="text-danger">Field is required</small>
+                <small style="visibility:hidden;" *ngIf="!(careerField?.invalid && careerField?.touched)" > n</small>
               </div>
             </div>
           </div>
@@ -350,14 +359,16 @@
                     <div class="form-group">
                       <label class="required-field" for="fnText"> University </label>
                       <input type="text" class="form-control" formControlName="university" id="fnText" placeholder="Enter University">
-                      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                      <small *ngIf="university?.invalid && university?.touched" class="text-danger">Field is required</small>
+                      <small style="visibility:hidden;" *ngIf="!(university?.invalid && university?.touched)" > n</small>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-group">
                       <label class="required-field" for="lnText">Major </label>
                       <input type="text" class="form-control" formControlName="major" id="lnText" placeholder="Enter Your Major">
-                      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+                      <small *ngIf="major?.invalid && major?.touched" class="text-danger">Field is required</small>
+                      <small style="visibility:hidden;" *ngIf="!(major?.invalid && major?.touched)" > n</small>
                     </div>
                   </div>
                 </div>
@@ -368,7 +379,8 @@
                     <div class="form-group">
                       <label class="required-field" for="fnText"> Company Name </label>
                       <input type="text" class="form-control" formControlName="companyName" id="lnText" placeholder="Enter Company Name">
-                      <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                      <small *ngIf="companyName?.invalid && companyName?.touched" class="text-danger">Field is required</small>
+                      <small style="visibility:hidden;" *ngIf="!(companyName?.invalid && companyName?.touched)" > n</small>
                     </div>
                   </div>
           
@@ -376,7 +388,8 @@
                     <div class="form-group">
                       <label class="required-field" for="fnText"> Job Title </label>
                       <input type="text" class="form-control" formControlName="jobTitle" id="lnText" placeholder="Enter Job Title">
-                        <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                      <small *ngIf="jobTitle?.invalid && jobTitle?.touched" class="text-danger">Field is required</small>
+                      <small style="visibility:hidden;" *ngIf="!(jobTitle?.invalid && jobTitle?.touched)" > n</small>
                     </div>
                   </div>   
                 </div>
@@ -396,14 +409,15 @@
                               <mat-option value="Other2">Other</mat-option>
           
                         </mat-select>
-                        <small class="form-check-inline form-text custom-invalid-feedback">Field is required</small>
+                        <small *ngIf="hearAboutus?.invalid && hearAboutus?.touched" class="text-danger">Field is required</small>
+                        <small style="visibility:hidden;" *ngIf="!(hearAboutus?.invalid && hearAboutus?.touched)" > n</small>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-group">
                       <label for="lnText"> If hear about us is not mentioned </label>
                       <input type="text" class="form-control" id="lnText" formControlName="ifnothearAboutus"  placeholder="Enter where did you hear about us">
-                      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is not required</small>
+                      <!-- <small id="fnHelp" class="form-text custom-invalid-feedback">Field is not required</small> -->
                     </div>
                   </div>
                 </div>
@@ -631,7 +645,8 @@
           <mat-option value="zambian">Zambian</mat-option>
           <mat-option value="zimbabwean">Zimbabwean</mat-option>
         </mat-select>
-        <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+        <small *ngIf="region?.invalid && region?.touched" class="text-danger">Field is required</small>
+        <small style="visibility:hidden;" *ngIf="!(region?.invalid && region?.touched)" > n</small>
       </div>
     </div>
     <div class="col">
@@ -833,7 +848,8 @@
           <mat-option value="zambian">Zambian</mat-option>
           <mat-option value="zimbabwean">Zimbabwean</mat-option>
         </mat-select>
-        <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+        <small *ngIf="otherregion?.invalid && otherregion?.touched" class="text-danger">Field is required</small>
+        <small style="visibility:hidden;" *ngIf="!(otherregion?.invalid && otherregion?.touched)" > n</small>
       </div>
     </div>
   </div>
@@ -846,7 +862,8 @@
           <mat-option value="Yes">Yes</mat-option>
           <mat-option value="No">No</mat-option>
         </mat-select>
-        <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+        <small *ngIf="raceEthnicity?.invalid && raceEthnicity?.touched" class="text-danger">Field is required</small>
+        <small style="visibility:hidden;" *ngIf="!(raceEthnicity?.invalid && raceEthnicity?.touched)" > n</small>
       </div>
     </div>
     <div class="col">
@@ -925,7 +942,8 @@
           <mat-option value="CY">Welsh</mat-option>
           <mat-option value="XH">Xhosa</mat-option>
         </mat-select>
-        <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
+        <small *ngIf="languages?.invalid && languages?.touched" class="text-danger">Field is required</small>
+        <small style="visibility:hidden;" *ngIf="!(languages?.invalid && languages?.touched)" > n</small>
       </div>
     </div> 
   </div>
@@ -939,7 +957,6 @@
         <mat-option value="Yes">Yes</mat-option>
         <mat-option value="No">No</mat-option>
       </mat-select>
-      <small id="fnHelp" class="form-text custom-invalid-feedback">Field is required</small>
     </div>
   </div>
 </div>
