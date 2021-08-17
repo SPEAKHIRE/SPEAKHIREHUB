@@ -21,6 +21,7 @@ The following functionality will be working on:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+![](https://i.imgur.com/wa5LNkT.gif)
 
 --------------
 
