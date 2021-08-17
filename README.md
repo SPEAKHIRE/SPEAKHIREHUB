@@ -12,9 +12,10 @@ The following functionality is completed:
 
 The following functionality will be working on:
 
+- [ ] Page 1, Page 2, Page 3 Validation for require
 - [ ] Enter Password and Reenter Password need to be match
 - [ ] User will not able to move to next page if recent require do not fill.
-- [ ] Page 1, Page 2, Page 3 Validation for require
+
 
 
 ## Video Walkthrough
