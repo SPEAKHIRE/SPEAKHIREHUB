@@ -101,6 +101,7 @@ app.get('/createsurveyinfo', (req,res) => {
     });
 });
 
+
 app.get('/createchampion', (req,res) => {
     let sql = "CREATE TABLE champion(application_id int NOT NULL AUTO_INCREMENT, user_id INT NOT NULL, DOB DATE NOT NULL, gender VARCHAR(255) NOT NULL, phone_number VARCHAR(15) NULL, citizenship VARCHAR(255), mailing_address VARCHAR(255) NOT NULL, city_res VARCHAR(255) NOT NULL, contact VARCHAR(255) NOT NULL, career VARCHAR(255) NOT NULL, regional_nationality VARCHAR(255) NOT NULL, race VARCHAR(255) NOT NULL, religion VARCHAR(255) NOT NULL, linked_in VARCHAR(255) NULL, resume VARCHAR(255) NULL, degree VARCHAR(255) NOT NULL, university VARCHAR(255) NOT NULL, major VARCHAR(255) NOT NULL, job VARCHAR(255) NOT NULL, immigrant_q VARCHAR(255) NOT NULL, languages VARCHAR(255) NOT NULL, other_languages VARCHAR(255) NOT NULL, other_regional_nationality VARCHAR(255) NOT NULL, photo_waiver VARCHAR(255) NULL, headshot VARCHAR(255) NULL, PRIMARY KEY(application_id), FOREIGN KEY (user_id) REFERENCES profile(user_id))";
     db.query(sql, err => {
