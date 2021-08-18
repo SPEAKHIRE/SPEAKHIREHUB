@@ -8,10 +8,9 @@ SPEAKHIREHUB/src/app/auth/components/
 
 The following functionality is completed:
 
-- [x] Page 2(profileInformation): Validation for require
+- [x] Page 1(confirmEligible), Page 2(profileInformation), Page 3(personalProfProfessional), Page 4(demographicInformation) Validation for require
 - [x] Email, Phone numbers, max && min letters Validation
 - [x] User is not able to move to next page if recent required do not fill out.
-- [x] Page 1(confirmEligible), Page 3(personalProfProfessional), Page 4(demographicInformation) Validation for require
 
 The following functionality will be working on:
 
