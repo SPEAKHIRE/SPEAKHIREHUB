@@ -8,14 +8,16 @@ SPEAKHIREHUB/src/app/auth/components/
 
 The following functionality is completed:
 
-- [x] Page 2(profileInformation): Validation for require
+- [x] Page 1(confirmEligible), Page 2(profileInformation), Page 3(personalProfProfessional), Page 4(demographicInformation) Validation for require
 - [x] Email, Phone numbers, max && min letters Validation
+- [x] User is not able to move to next page if recent required do not fill out.
 
 The following functionality will be working on:
 
-- [ ] Page 1(confirmEligible), Page 3(personalProfProfessional), Page 4(demographicInformation) Validation for require
 - [ ] Enter Password and Reenter Password need to be match
-- [ ] User will not able to move to next page if recent require do not fill.
+- [ ] Page 1 will change to only "YES" is validator
+- [ ] Language field will have mutiple selections(currently only can choose one)
+- [ ] Add CSS(Optional)
 
 
 
@@ -24,7 +26,7 @@ The following functionality will be working on:
 Here's a walkthrough of implemented user stories:
 
 
-![](https://i.imgur.com/wa5LNkT.gif)
+![](https://i.imgur.com/EpE2ZiK.gif)
 
 --------------
 
