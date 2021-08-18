@@ -10,12 +10,15 @@ The following functionality is completed:
 
 - [x] Page 2(profileInformation): Validation for require
 - [x] Email, Phone numbers, max && min letters Validation
+- [x] User is not able to move to next page if recent require do not fill.
+- [x] Page 1(confirmEligible), Page 3(personalProfProfessional), Page 4(demographicInformation) Validation for require
 
 The following functionality will be working on:
 
-- [ ] Page 1(confirmEligible), Page 3(personalProfProfessional), Page 4(demographicInformation) Validation for require
 - [ ] Enter Password and Reenter Password need to be match
 - [ ] User will not able to move to next page if recent require do not fill.
+- [ ] Page 1 will change to only "YES" is validator
+- [ ] Language field will have mutiple selections
 
 
 
