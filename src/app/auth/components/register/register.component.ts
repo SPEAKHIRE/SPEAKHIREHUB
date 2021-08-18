@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatStepperModule} from '@angular/material/stepper';
 import { Router } from '@angular/router';
+// import { format } from 'path';
 import { AuthModule  } from '../../auth.module';
 
 
@@ -12,21 +13,28 @@ import { AuthModule  } from '../../auth.module';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit { 
+
   multistep!: FormGroup;
+  confirm!: FormGroup;
+
+
+
+  buttonClicked: Boolean = false
 
 
 
   
  
 
-  constructor() { 
+  constructor(private cd:ChangeDetectorRef) { 
     
   }
 
   ngOnInit(){
+
     this.multistep = new FormGroup({
       confirm: new FormGroup({
-        confirmEligible: new FormControl('',[Validators.required, Validators.requiredTrue]),
+        confirmEligible: new FormControl(null,Validators.required),
   
     }),
       profileInformation: new FormGroup({
@@ -47,7 +55,7 @@ export class RegisterComponent implements OnInit {
         mailingAddress: new FormControl('',Validators.required),
         linkedlnURL: new FormControl('',Validators.required),
         cityOfResident: new FormControl('',Validators.required),
-        resume: new FormControl('',Validators.required),
+        resume: new FormControl(''),
         highestDegreeAchieved: new FormControl('',Validators.required),
         careerField:new FormControl('',Validators.required),
         university:new FormControl('',Validators.required),
@@ -75,6 +83,14 @@ export class RegisterComponent implements OnInit {
     // confirm
   get confirmEligible() { return this.multistep.get('profileInformation')?.get('confirmEligible'); }
 
+  confirmValidate() { 
+    // console.log(this.multistep.get('confirmEligible')?.)
+    return this.confirmEligible?.invalid
+    // return true
+  }
+
+
+
   // profileInformation
   get fname() { return this.multistep.get('profileInformation')?.get('fname'); }
   get lname() { return this.multistep.get('profileInformation')?.get('lname'); }
@@ -88,6 +104,8 @@ export class RegisterComponent implements OnInit {
   get citizenship() { return this.multistep.get('profileInformation')?.get('citizenship'); }
   get religion() { return this.multistep.get('profileInformation')?.get('religion'); }
   get ifnotreligion() { return this.multistep.get('profileInformation')?.get('ifnotreligion'); }
+
+
 
   // personalProfProfessional
   get mailingAddress() { return this.multistep.get('personalProfProfessional')?.get('mailingAddress'); }
@@ -111,6 +129,135 @@ export class RegisterComponent implements OnInit {
   get immigrant() { return this.multistep.get('demographicInformation')?.get('immigrant'); }
 
 
+  // get isValid() { return this.fname?.invalid && this.lname?.invalid && this.fname?.invalid this.fname?.invalid
+  //   this.fname?.invalid}
+  validate(form:string) { 
+    var bool = true
+    // console.log(this.multistep.get("profileInformation")?.value)
+    for (const field in this.multistep.get(form)?.value){ // 'field' is a string
+      console.log(field + ": " + this.multistep.get(form)?.get(field)?.valid)
+      if(!this.multistep.get(form)?.get(field)?.valid){
+        return false
+      }
+    }
+    return true
+  }
 
+  showErrors(form:string){
+    // console.log(this.multistep.get("profileInformation")?.value)
+    for (const field in this.multistep.get(form)?.value){ // 'field' is a string
+      console.log(field + ": " + this.multistep.get(form)?.get(field)?.valid)
+      if(this.multistep.get(form)?.get(field)?.touched==false && this.multistep.get(form)?.get(field)?.invalid){
+        this.multistep.get(form)?.get(field)?.markAllAsTouched()
+      }
+    }
+    return true
+  }
 
+  showConfirmErrors(){
+  if (this.confirmEligible?.touched==false && this.confirmEligible?.invalid) {
+    this.confirmEligible?.markAllAsTouched();
+    } 
+    return
+  } 
+
+  showProfileInformationErrors() {
+    
+    if (this.fname?.touched==false && this.fname?.invalid) {
+      this.fname?.markAllAsTouched();
+    }
+
+    if (this.lname?.touched==false && this.lname?.invalid) {
+      this.lname?.markAllAsTouched();
+    }
+
+    if (this.uname?.touched==false && this.uname?.invalid) {
+      this.uname?.markAllAsTouched();
+    }
+
+    if (this.dBirth?.touched==false && this.dBirth?.invalid) {
+      this.dBirth?.markAllAsTouched();
+    }
+
+    if (this.passWord?.touched==false && this.passWord?.invalid) {
+      this.passWord?.markAllAsTouched();
+    }
+
+    if (this.reenterPassWord?.touched==false && this.reenterPassWord?.invalid) {
+      this.reenterPassWord?.markAllAsTouched();
+    }
+
+    if (this.email?.touched==false && this.email?.invalid) {
+      this.email?.markAllAsTouched();
+    }
+
+    if (this.pNumber?.touched==false && this.pNumber?.invalid) {
+      this.pNumber?.markAllAsTouched();
+    }
+
+    if (this.gender?.touched==false && this.gender?.invalid) {
+      this.gender?.markAllAsTouched();
+    }
+
+    if (this.citizenship?.touched==false && this.citizenship?.invalid) {
+      this.citizenship?.markAllAsTouched();
+    }
+
+    if (this.religion?.touched==false && this.religion?.invalid) {
+      this.religion?.markAllAsTouched();
+    }
+    return
+    // do something else
+}
+
+showPersonalProfProfessionalErrors() {
+  if (this.mailingAddress?.touched==false && this.mailingAddress?.invalid) {
+    this.mailingAddress?.markAllAsTouched();
+  }
+
+  if (this.linkedlnURL?.touched==false && this.linkedlnURL?.invalid) {
+    this.linkedlnURL?.markAllAsTouched();
+  }
+
+  if (this.cityOfResident?.touched==false && this.cityOfResident?.invalid) {
+    this.cityOfResident?.markAllAsTouched();
+  }
+
+  if (this.resume?.touched==false && this.resume?.invalid) {
+    this.resume?.markAllAsTouched();
+  }
+
+  if (this.passWord?.touched==false && this.passWord?.invalid) {
+    this.passWord?.markAllAsTouched();
+  }
+
+  if (this.highestDegreeAchieved?.touched==false && this.highestDegreeAchieved?.invalid) {
+    this.highestDegreeAchieved?.markAllAsTouched();
+  }
+
+  if (this.careerField?.touched==false && this.careerField?.invalid) {
+    this.careerField?.markAllAsTouched();
+  }
+
+  if (this.university?.touched==false && this.university?.invalid) {
+    this.university?.markAllAsTouched();
+  }
+
+  if (this.major?.touched==false && this.major?.invalid) {
+    this.major?.markAllAsTouched();
+  }
+
+  if (this.companyName?.touched==false && this.companyName?.invalid) {
+    this.companyName?.markAllAsTouched();
+  }
+
+  if (this.jobTitle?.touched==false && this.jobTitle?.invalid) {
+    this.jobTitle?.markAllAsTouched();
+  }
+  if (this.hearAboutus?.touched==false && this.hearAboutus?.invalid) {
+    this.hearAboutus?.markAllAsTouched();
+  }
+  return
+  // do something else
+}
 }

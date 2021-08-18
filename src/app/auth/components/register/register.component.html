@@ -2,8 +2,8 @@
 
 <form [formGroup]="multistep">
 
- <mat-horizontal-stepper>
-    <mat-step label = "Confirm your eligibility" formGroupName="confirm" >
+ <mat-horizontal-stepper linear>
+    <mat-step label = "Confirm your eligibility" formGroupName="confirm" [completed]="validate('confirm')">
       <!-- Page 1: Confirm your eligibility -->
           <div>
             <h1> Hello! Thank you for your interest in becoming a SPEAKHIRE Career Pathways Champion!  </h1>
@@ -25,11 +25,13 @@
 
               <small *ngIf="confirmEligible?.invalid && confirmEligible?.touched" class="text-danger">Field is required</small>
               <small style="visibility:hidden;" *ngIf="!(confirmEligible?.invalid && confirmEligible?.touched)" > n</small>
+
+                
               <br>
               <br>
 
               <div>
-                <button mat-button matStepperNext type="button" class="btn btn-primary mx-2">Next</button>
+                <button mat-button matStepperNext (click)="showErrors('confirm')" type="button" class="btn btn-primary mx-2">Next</button>
               </div>
             </div>
     </mat-step>
@@ -39,7 +41,7 @@
 
 
 
-    <mat-step label = "Profile Information" formGroupName="profileInformation">
+    <mat-step label = "Profile Information" formGroupName="profileInformation" [completed]="validate('profileInformation')">
         <!-- Page 2: Profile Information-->
           <div>
             <div class="row">
@@ -52,7 +54,7 @@
                 <div class="form-group">
                   <label class="required-field" for="fnText">First Name</label>
                   <input type="text" class="form-control" formControlName="fname" id="fnText" placeholder="Enter first name">
-                  <small *ngIf="fname?.invalid && fname?.touched" class="text-danger">Field is required</small>
+                  <small *ngIf="fname?.invalid && fname?.touched" class="text-danger" >Field is required</small>
                   <small style="visibility:hidden;" *ngIf="!(fname?.invalid && fname?.touched)" > n</small>
                 </div>
               </div>
@@ -210,8 +212,8 @@
                   </div> 
 
             <div>
-              <button mat-button matStepperPrevious type="button"  class="btn btn-primary mx-2">Back</button>
-              <button mat-button matStepperNext type="button" [disabled]="!multistep.valid" class="btn btn-primary mx-2">Next</button>
+              <button mat-button matStepperPrevious type="button" class="btn btn-primary mx-2">Back</button>
+              <button mat-button matStepperNext (click)="showErrors('profileInformation')" type="button" class="btn btn-primary mx-2">Next</button>
             </div>
         </div>
     </mat-step>
@@ -259,7 +261,7 @@
 
 
 
-    <mat-step label = "Professional Information"  formGroupName="personalProfProfessional">
+    <mat-step label = "Professional Information"  formGroupName="personalProfProfessional" [completed]="validate('personalProfProfessional')">
         <!-- Page 3: Professional Information-->
         <div>
           <div class="row">
@@ -429,7 +431,7 @@
                 </div> 
             <div>
               <button mat-button matStepperPrevious type="button" class="btn btn-primary mx-2">Back</button>
-              <button mat-button matStepperNext type="button" class="btn btn-primary mx-2">Next</button>
+              <button mat-button matStepperNext (click)="showErrors('personalProfProfessional')" type="button" class="btn btn-primary mx-2">Next</button>
             </div>
           
     </mat-step>
@@ -437,7 +439,17 @@
 
 
 
-<mat-step label = "Demographic Information"  formGroupName="demographicInformation">
+
+
+
+
+
+
+
+
+
+
+<mat-step label = "Demographic Information"  formGroupName="demographicInformation" [completed]="validate('demographicInformation')">
  
 <!-- Page 4: Demographic Information-->
 <div>
@@ -968,12 +980,16 @@
 </div>
 <div>
   <button mat-button matStepperPrevious type="button" class="btn btn-primary mx-2">Back</button>
-  <button mat-button matStepperNext type="button" class="btn btn-primary mx-2">Next</button>
+  <button mat-button matStepperNext type="button" (click)="showErrors('demographicInformation')"class="btn btn-primary mx-2">Next</button>
 </div>
 </mat-step>
 
 
-<mat-step label = "Headshot"  formGroupName="confirm">
+
+
+
+
+<mat-step label = "Headshot" formGroupName="thankyou" [completed]="validate('thankyou')">
   <!-- Page 5: Headshot-->
   <div>
     <h1> Photography Waiver and Release Form</h1>
@@ -991,7 +1007,7 @@
 </div> 
   <div>
     <button mat-button matStepperPrevious type="button" class="btn btn-primary mx-2">Back</button>
-    <button mat-button matStepperNext type="button" class="btn btn-primary mx-2">Next</button>
+    <button mat-button matStepperNext (click)="showErrors('thankyou')" type="button" class="btn btn-primary mx-2">Next</button>
   </div>
 </mat-step>
 
@@ -1015,7 +1031,7 @@
   <button type="submit" class="btn btn-primary mx-2" *ngIf = "step == 5">Submit</button>
 <br>
 <br> -->
-    <!-- <pre>{{multistep.value | json}}</pre> -->
+    <pre>{{multistep.value | json}}</pre>
 
 </form> 
 
