@@ -3,6 +3,7 @@ var app = express();
 const mysql = require("mysql")
 
 
+
 //create an application
 const db = mysql.createConnection({
     host: "127.0.0.1",
