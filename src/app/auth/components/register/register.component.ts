@@ -1,10 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatStepperModule} from '@angular/material/stepper';
-import { Router } from '@angular/router';
-// import { format } from 'path';
-import { AuthModule  } from '../../auth.module';
 
 
 @Component({
@@ -13,18 +8,9 @@ import { AuthModule  } from '../../auth.module';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit { 
-
   multistep!: FormGroup;
-  confirm!: FormGroup;
-
-
 
   buttonClicked: Boolean = false
-
-
-
-  
- 
 
   constructor(private cd:ChangeDetectorRef) { 
     
@@ -161,103 +147,4 @@ export class RegisterComponent implements OnInit {
     return
   } 
 
-  showProfileInformationErrors() {
-    
-    if (this.fname?.touched==false && this.fname?.invalid) {
-      this.fname?.markAllAsTouched();
-    }
-
-    if (this.lname?.touched==false && this.lname?.invalid) {
-      this.lname?.markAllAsTouched();
-    }
-
-    if (this.uname?.touched==false && this.uname?.invalid) {
-      this.uname?.markAllAsTouched();
-    }
-
-    if (this.dBirth?.touched==false && this.dBirth?.invalid) {
-      this.dBirth?.markAllAsTouched();
-    }
-
-    if (this.passWord?.touched==false && this.passWord?.invalid) {
-      this.passWord?.markAllAsTouched();
-    }
-
-    if (this.reenterPassWord?.touched==false && this.reenterPassWord?.invalid) {
-      this.reenterPassWord?.markAllAsTouched();
-    }
-
-    if (this.email?.touched==false && this.email?.invalid) {
-      this.email?.markAllAsTouched();
-    }
-
-    if (this.pNumber?.touched==false && this.pNumber?.invalid) {
-      this.pNumber?.markAllAsTouched();
-    }
-
-    if (this.gender?.touched==false && this.gender?.invalid) {
-      this.gender?.markAllAsTouched();
-    }
-
-    if (this.citizenship?.touched==false && this.citizenship?.invalid) {
-      this.citizenship?.markAllAsTouched();
-    }
-
-    if (this.religion?.touched==false && this.religion?.invalid) {
-      this.religion?.markAllAsTouched();
-    }
-    return
-    // do something else
-}
-
-showPersonalProfProfessionalErrors() {
-  if (this.mailingAddress?.touched==false && this.mailingAddress?.invalid) {
-    this.mailingAddress?.markAllAsTouched();
-  }
-
-  if (this.linkedlnURL?.touched==false && this.linkedlnURL?.invalid) {
-    this.linkedlnURL?.markAllAsTouched();
-  }
-
-  if (this.cityOfResident?.touched==false && this.cityOfResident?.invalid) {
-    this.cityOfResident?.markAllAsTouched();
-  }
-
-  if (this.resume?.touched==false && this.resume?.invalid) {
-    this.resume?.markAllAsTouched();
-  }
-
-  if (this.passWord?.touched==false && this.passWord?.invalid) {
-    this.passWord?.markAllAsTouched();
-  }
-
-  if (this.highestDegreeAchieved?.touched==false && this.highestDegreeAchieved?.invalid) {
-    this.highestDegreeAchieved?.markAllAsTouched();
-  }
-
-  if (this.careerField?.touched==false && this.careerField?.invalid) {
-    this.careerField?.markAllAsTouched();
-  }
-
-  if (this.university?.touched==false && this.university?.invalid) {
-    this.university?.markAllAsTouched();
-  }
-
-  if (this.major?.touched==false && this.major?.invalid) {
-    this.major?.markAllAsTouched();
-  }
-
-  if (this.companyName?.touched==false && this.companyName?.invalid) {
-    this.companyName?.markAllAsTouched();
-  }
-
-  if (this.jobTitle?.touched==false && this.jobTitle?.invalid) {
-    this.jobTitle?.markAllAsTouched();
-  }
-  if (this.hearAboutus?.touched==false && this.hearAboutus?.invalid) {
-    this.hearAboutus?.markAllAsTouched();
-  }
-  return
-  // do something else
-}
 }
