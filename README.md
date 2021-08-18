@@ -26,7 +26,7 @@ The following functionality will be working on:
 Here's a walkthrough of implemented user stories:
 
 
-![](https://i.imgur.com/wa5LNkT.gif)
+![](https://i.imgur.com/EpE2ZiK.gif)
 
 --------------
 
