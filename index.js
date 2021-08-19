@@ -1,8 +1,8 @@
 const express = require("express")
 var app = express();
 const mysql = require("mysql")
-
-
+const cors = require("cors")
+// download them by : npm install express sequelize mysql2 cors --save
 
 //create an application
 const db = mysql.createConnection({
@@ -19,6 +19,20 @@ db.connect((err) => {
         throw err
     }
     console.log('MySQL Connected')
+});
+
+app.get('/', (req, res) => {
+    res.json({
+        message: 'Hello World'
+    });
+});
+
+app.get('/:name', (req, res) => {
+    let name = req.params.name;
+
+    res.json({
+        message: `Hello ${name}`
+    });
 });
 
 //create database
@@ -129,7 +143,7 @@ app.get('/createschoolinfo', (req,res) => {
         if(err) {
             throw err;
         }
-        res.send('School table created!')
+        res.send('School Info table created!')
     });
 });
 
