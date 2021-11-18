@@ -1,0 +1,208 @@
+
+.form-control.ng-touched.ng-invalid {
+    border:1px solid red;
+   }
+   .form-control.ng-touched.ng-valid {
+    border:1px solid green;
+   }
+   
+   
+
+
+.required-field::before {
+    content: "*";
+    color: red;
+    float: right;
+  }
+
+.tb-10{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+body {
+  padding-top: 70px;
+  padding-bottom: 20px;
+  min-width:600px;  
+}
+
+.navbar-custom {
+    background-color:#e74c3c;
+    color:#ffffff;
+    border-radius:0;    
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#fff;
+}
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color:transparent;
+}
+.navbar-custom .navbar-brand {
+    color:#eeeeee;
+}
+
+#container {
+	border: 6px;
+}
+/* form styling */
+#form-container                { 
+	background:#F0F0F0;
+	margin-bottom:20px;    
+    border-radius:2px;
+    border: 1px solid #CCC; 
+}
+#form-container .page-header   {
+	background:#D0D0D0; 
+	margin:0; 
+	padding:20px; 
+    border-top-left-radius:0px; 
+    border-top-right-radius:0px; 
+}
+
+
+.btn-primary {
+    background-color: #2D82AD;
+    border-color: #2D82AD;
+}
+
+.btn-primary.active,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover {
+    background-color: #486090;
+    border-color: #486090;	
+}
+
+.options-title {
+	font-weight: bold;
+	color: #666;		
+}
+
+hr { 
+	background-color: #D0D0D0;
+	height: 1px;
+}
+
+.line-linkage {
+    width: 93px;
+    border: 1px solid #a0a0a0;
+    position: relative;
+    top:16px;
+    left:70px;
+    z-index:0;    
+}
+
+.line-over {
+	z-index: 200;
+}
+
+.trackProgress {
+    width: 100%;
+    margin-left: auto ;
+    margin-right: auto ;    
+}
+.trackProgress ul {
+    list-style-type: none; /*to remove bullets*/
+    text-align: center;
+    padding: 0px;
+    zoom:1;    
+    overflow: hidden;
+}
+.trackProgress li{
+    padding: 0px;
+    width: 120px;
+    display:inline-block;
+}
+.backcolor{
+  background:#e74c3c; 
+}
+
+.agree_to_terms_section {
+    margin: 12px 0;
+}
+  
+.agree_to_terms {
+    margin: 0 12px;
+}
+  
+ul {
+    list-style-type: none;
+    margin-top: 4px;
+}
+
+/* numbered buttons */
+#status-buttons                 {  }
+#status-buttons ul              { margin-bottom: 0px; }
+#status-buttons a               { color:#808080; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }
+#status-buttons a:hover         { text-decoration:none; }
+
+/* we will style the span as the circled number */
+#status-buttons span            { color:#FFF; background:#A0A0A0; display:block; height:30px; margin:0 auto 10px; padding-top:7px; width:30px; 
+    border-radius:50%; }
+
+/* active buttons turn light green-blue*/
+#status-buttons a.active span   { background:#e74c3c; }
+
+
+/* ANIMATION STYLINGS
+============================================================================= */
+#cruce-form            { position:relative; min-height:150px; overflow:hidden; padding:30px 30px 5px; }
+#form-views             { width:auto; }
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+
+#form-views.ng-enter,
+#form-views.ng-leave      { position:absolute; left:30px; right:30px;
+    transition:0.3s all ease; -moz-transition:0.3s all ease; -webkit-transition:0.3s all ease; 
+}
+
+/* enter animation */
+
+#form-views.ng-enter            { 
+    -webkit-animation:slideInRight 0.3s both ease;
+    -moz-animation:slideInRight 0.3s both ease;
+    animation:slideInRight 0.3s both ease; 
+}
+
+/* leave animation */
+
+#form-views.ng-leave            { 
+    -webkit-animation:slideOutLeft 0.3s both ease;
+    -moz-animation:slideOutLeft 0.3s both ease;
+    animation:slideOutLeft 0.3s both ease;   
+}
+
+
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+@keyframes slideOutLeft {
+    to      { transform: translateX(-200%); }
+}
+@-moz-keyframes slideOutLeft {  
+    to      { -moz-transform: translateX(-200%); }
+}
+@-webkit-keyframes slideOutLeft {
+    to      { -webkit-transform: translateX(-200%); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from    { transform:translateX(200%); }
+    to      { transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+    from    { -moz-transform:translateX(200%); }
+    to      { -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+    from    { -webkit-transform:translateX(200%); }
+    to      { -webkit-transform: translateX(0); }
+}
+
