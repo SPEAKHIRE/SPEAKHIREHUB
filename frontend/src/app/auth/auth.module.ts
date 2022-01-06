@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatPseudoCheckbox, MatPseudoCheckboxModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox'
+import { MatTooltipModule } from '@angular/material/tooltip'
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox'
     MatStepperModule,
     MatRadioModule,
     MatCheckboxModule,
+    MatTooltipModule
   ],
   exports: [
     LoginComponent,

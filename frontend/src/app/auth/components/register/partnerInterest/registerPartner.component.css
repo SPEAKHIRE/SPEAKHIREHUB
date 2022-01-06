@@ -6,7 +6,38 @@
     border:1px solid green;
    }
    
-   
+.first-page{
+    margin-top: 140px;
+    text-align: center;
+}   
+
+.second-page{
+    margin-top: 200px;
+    text-align: center;
+}   
+
+.programsHover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.programs-hover-list {
+    list-style-type: disc;
+    margin-left: 10px;
+
+}
+
+@media only screen and (min-width: 600px) {
+    .first-page{
+        margin-top: 120px;
+    }    
+    .second-page{
+        margin-top: 180px;
+    }
+}
+
 
 
 .required-field::before {
@@ -69,6 +100,7 @@ body {
     border-color: #2D82AD;
 }
 
+
 .btn-primary.active,
 .btn-primary.focus,
 .btn-primary:active,
@@ -81,6 +113,11 @@ body {
 .options-title {
 	font-weight: bold;
 	color: #666;		
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
 }
 
 hr { 
